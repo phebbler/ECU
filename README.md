@@ -1,29 +1,13 @@
-1. Main Controller & CAN-Nachrichten
-Dieser Code läuft auf einem Arduino und übernimmt zentrale Steuerfunktionen:
+1. Main Controller & CAN Messages This code runs on an Arduino and performs key control functions:
+Reads the status of several buttons (e.g., for turning cruise control on/off) and sends it via the CAN bus. Detects the speed using a Hall sensor and transmits it via the CAN bus. 
+Reads the turn signal status and also outputs it via the CAN bus. Simulates various CAN messages from a Toyota Corolla. 
 
-Liest den Status mehrerer Tasten (z. B. zum Ein-/Ausschalten des Tempomats) und sendet ihn über den CAN-Bus.
-Erfasst die Geschwindigkeit über einen Hallsensor und überträgt sie auf dem CAN-Bus.
-Liest den Blinkerstatus und gibt diesen ebenfalls auf dem CAN-Bus aus.
-Simuliert verschiedene CAN-Nachrichten eines Toyota Corolla.
-2. Gas Controller
-Dieser Code läuft auf einem Arduino, empfängt CAN-Nachrichten und steuert einen Motor, der mechanisch mit dem Gaspedal verbunden ist:
+2. Throttle Controller This code runs on an Arduino, receives CAN messages, and controls a motor mechanically connected to the accelerator pedal:
+Reads a potentiometer to determine the current throttle position. Receives an acceleration command via the CAN bus. Controls the motor accordingly to execute the desired driving command.
 
-Liest ein Potentiometer zur Bestimmung der aktuellen Drosselklappenposition.
-Empfängt einen Beschleunigungsbefehl über den CAN-Bus.
-Steuert den Motor entsprechend zur Umsetzung des gewünschten Fahrbefehls.
-3. Brake Controller
-Dieser Code läuft auf einem Arduino, empfängt CAN-Nachrichten und steuert einen Motor, der mit dem Bremspedal verbunden ist:
-
-Liest einen Drucksensor zur Ermittlung der aktuellen Bremsleistung.
-Empfängt einen Bremsbefehl über den CAN-Bus.
-Steuert den Motor so an, dass die gewünschte Bremskraft erzeugt wird.
-Erkennt manuelle Bremsbetätigung und sendet den Status über den CAN-Bus.
-
-
-
-
-
-
+3. Brake Controller This code runs on an Arduino, receives CAN messages, and controls a motor connected to the brake pedal:
+Reads a pressure sensor to determine the current braking force. Receives a brake command via the CAN bus. Controls the motor to generate the desired braking force.
+Detects manual brake application and sends the status via the CAN bus.
 
 # ECU
 
